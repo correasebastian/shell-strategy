@@ -9,6 +9,9 @@ angular.module('myApp', [
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
+  // $locationProvider.config
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider
+  // .otherwise({redirectTo: '/view1'});
+  .otherwise({template : ''});
 }]);
