@@ -8,7 +8,8 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  // $locationProvider.hashPrefix('!');
+   $locationProvider.html5Mode(true);
   // $locationProvider.config
 
   $routeProvider
