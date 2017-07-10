@@ -3,39 +3,45 @@
   "project": {
     "name": "shell-strategy"
   },
-  "apps": [
-    {
-      "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
-      "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+  "apps": [{
+    "root": "src",
+    "outDir": "dist",
+    "assets": [
+      "assets",
+      "favicon.ico"
+    ],
+    "index": "index.html",
+    "main": "main.ts",
+    "polyfills": "polyfills.ts",
+    "test": "test.ts",
+    "tsconfig": "tsconfig.app.json",
+    "testTsconfig": "tsconfig.spec.json",
+    "prefix": "app",
+    "styles": [
+      "styles.css"
+    ],
+    "scripts": [
+      "../ng1/bower_components/angular/angular.js",
+      "../ng1/bower_components/angular-route/angular-route.js",
+      "../ng1/app.js",
+      "../ng1/view1/view1.js",
+      "../ng1/view2/view2.js",
+      "../ng1/components/version/version.js",
+      "../ng1/components/version/version-directive.js",
+      "../ng1/components/version/interpolate-filter.js"
+    ],
+    "environmentSource": "environments/environment.ts",
+    "environments": {
+      "dev": "environments/environment.ts",
+      "prod": "environments/environment.prod.ts"
     }
-  ],
+  }],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
     }
   },
-  "lint": [
-    {
+  "lint": [{
       "project": "src/tsconfig.app.json"
     },
     {
