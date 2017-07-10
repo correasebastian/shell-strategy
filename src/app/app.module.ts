@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { Feature1Sub1Component } from './feature1-sub1/feature1-sub1.component';
 import { Feature1Sub2Component } from './feature1-sub2/feature1-sub2.component';
+import { EmptyComponent } from './empty/empty.component';
 
 // url strategy
-class CustomHandlingStrategy implements UrlHandlingStrategy {
+export class CustomHandlingStrategy implements UrlHandlingStrategy {
   shouldProcessUrl(url) { return url.toString().startsWith('/feature1') || url.toString() === '/'; }
   extract(url) { return url; }
   merge(url, whole) { return url; }
@@ -21,7 +22,8 @@ class CustomHandlingStrategy implements UrlHandlingStrategy {
     AppComponent,
     HomeComponent,
     Feature1Sub1Component,
-    Feature1Sub2Component
+    Feature1Sub2Component,
+    EmptyComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ class CustomHandlingStrategy implements UrlHandlingStrategy {
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', component: HomeComponent },
       { path: 'feature1/sub1', component: Feature1Sub1Component },
-      { path: 'feature1/sub2', component: Feature1Sub2Component }
+      { path: 'feature1/sub2', component: Feature1Sub2Component },
+      { path: '', component: EmptyComponent }
     ])
   ],
   providers: [
